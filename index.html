@@ -6,103 +6,78 @@
   <title>Uygulamamın Tanıtımı</title>
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#f0f4f8; color:#333; text-align:center; }
-    header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color:white; padding:80px 20px 40px; }
-    header h1 { font-size:2.5em; margin:0; }
+    
+    /* Header / Hero */
+    header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color:white; padding:100px 20px 60px 20px; }
+    header h1 { font-size:3em; margin:0; }
     header p { font-size:1.2em; margin:20px 0; }
-    header a { display:inline-block; background:#fff; color:#2575fc; padding:10px 25px; border-radius:30px; text-decoration:none; font-weight:bold; margin-top:10px; transition:0.3s;}
+    header a { display:inline-block; background:#fff; color:#2575fc; padding:12px 25px; border-radius:30px; font-weight:bold; text-decoration:none; margin-top:10px; transition:0.3s;}
     header a:hover { background:#eee; }
-    .lang-switch { position:absolute; top:15px; right:15px; }
-    .lang-switch button { margin-left:5px; padding:5px 10px; border:none; border-radius:5px; cursor:pointer;}
+
+    /* Features section */
     .features { padding:60px 20px; }
     .features h2 { font-size:2em; margin-bottom:40px; }
     .feature-card { display:inline-block; background:white; padding:20px; margin:10px; width:250px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s;}
     .feature-card:hover { transform: translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
     .feature-card img { width:80px; height:80px; margin-bottom:15px; }
+
+    /* Screenshots section */
+    .screenshots { padding:60px 20px; }
+    .screenshots h2 { font-size:2em; margin-bottom:40px; }
+    .screen-gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .screen-gallery img { width:250px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition:0.3s; }
+    .screen-gallery img:hover { transform: scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+
+    /* Footer */
     footer { background:#222; color:white; padding:20px; margin-top:40px; }
-    @media(max-width:800px) { .feature-card { width:80%; margin-bottom:20px; } }
+
+    /* Responsive */
+    @media(max-width:800px) { .feature-card, .screen-gallery img { width:80%; margin-bottom:20px; } }
   </style>
 </head>
 <body>
 
-  <div class="lang-switch">
-    <button onclick="setLang('tr')">TR</button>
-    <button onclick="setLang('en')">EN</button>
-  </div>
-
+  <!-- Hero / Başlangıç -->
   <header>
-    <h1 id="hero-title">Merhaba! Benim Uygulamam</h1>
-    <p id="hero-text">Bu uygulama ile hayatınızı kolaylaştıracak çözümleri keşfedin.</p>
-    <a id="hero-btn" href="#">Hemen İncele</a>
+    <h1>Merhaba! Benim Uygulamam</h1>
+    <p>Bu uygulama ile hayatınızı kolaylaştıracak çözümleri keşfedin.</p>
+    <a href="#">Hemen İncele</a>
   </header>
 
+  <!-- Özellikler -->
   <section class="features">
-    <h2 id="features-title">Özellikler</h2>
+    <h2>Özellikler</h2>
     <div class="feature-card">
       <img src="images/easy.png" alt="Kolay Kullanım">
-      <h3 id="f1-title">Kolay Kullanım</h3>
-      <p id="f1-text">Hızlı ve sezgisel arayüz ile hemen başlayın.</p>
+      <h3>Kolay Kullanım</h3>
+      <p>Hızlı ve sezgisel arayüz ile hemen başlayın.</p>
     </div>
     <div class="feature-card">
       <img src="images/fast.png" alt="Hızlı Performans">
-      <h3 id="f2-title">Hızlı Performans</h3>
-      <p id="f2-text">Uygulama saniyeler içinde yanıt verir ve donmaz.</p>
+      <h3>Hızlı Performans</h3>
+      <p>Uygulama saniyeler içinde yanıt verir ve donmaz.</p>
     </div>
     <div class="feature-card">
       <img src="images/modern.png" alt="Modern Tasarım">
-      <h3 id="f3-title">Modern Tasarım</h3>
-      <p id="f3-text">Göze hitap eden renkler ve tasarım detayları.</p>
+      <h3>Modern Tasarım</h3>
+      <p>Göze hitap eden renkler ve tasarım detayları.</p>
     </div>
   </section>
 
+  <!-- Ekran Görüntüleri -->
+  <section class="screenshots">
+    <h2>Ekran Görüntüleri</h2>
+    <div class="screen-gallery">
+      <img src="images/screen1.png" alt="Ekran 1">
+      <img src="images/screen2.png" alt="Ekran 2">
+      <img src="images/screen3.png" alt="Ekran 3">
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>Volkan © 2026</p>
   </footer>
-
-  <script>
-    const texts = {
-      tr: {
-        heroTitle: "Merhaba! Benim Uygulamam",
-        heroText: "Bu uygulama ile hayatınızı kolaylaştıracak çözümleri keşfedin.",
-        heroBtn: "Hemen İncele",
-        featuresTitle: "Özellikler",
-        f1Title: "Kolay Kullanım",
-        f1Text: "Hızlı ve sezgisel arayüz ile hemen başlayın.",
-        f2Title: "Hızlı Performans",
-        f2Text: "Uygulama saniyeler içinde yanıt verir ve donmaz.",
-        f3Title: "Modern Tasarım",
-        f3Text: "Göze hitap eden renkler ve tasarım detayları."
-      },
-      en: {
-        heroTitle: "Hello! My App",
-        heroText: "Discover solutions that make your life easier with this app.",
-        heroBtn: "Explore Now",
-        featuresTitle: "Features",
-        f1Title: "Easy to Use",
-        f1Text: "Start immediately with fast and intuitive interface.",
-        f2Title: "Fast Performance",
-        f2Text: "The app responds instantly and never freezes.",
-        f3Title: "Modern Design",
-        f3Text: "Visually appealing colors and design details."
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById('hero-title').innerText = texts[lang].heroTitle;
-      document.getElementById('hero-text').innerText = texts[lang].heroText;
-      document.getElementById('hero-btn').innerText = texts[lang].heroBtn;
-      document.getElementById('features-title').innerText = texts[lang].featuresTitle;
-      document.getElementById('f1-title').innerText = texts[lang].f1Title;
-      document.getElementById('f1-text').innerText = texts[lang].f1Text;
-      document.getElementById('f2-title').innerText = texts[lang].f2Title;
-      document.getElementById('f2-text').innerText = texts[lang].f2Text;
-      document.getElementById('f3-title').innerText = texts[lang].f3Title;
-      document.getElementById('f3-text').innerText = texts[lang].f3Text;
-    }
-
-    // Tarayıcı diline göre otomatik ayarla
-    const userLang = navigator.language || navigator.userLanguage;
-    if(userLang.startsWith('en')) setLang('en'); else setLang('tr');
-  </script>
 
 </body>
 </html>
